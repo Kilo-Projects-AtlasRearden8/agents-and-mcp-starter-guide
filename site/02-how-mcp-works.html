@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How MCP Servers Connect Local Files and Tools — AI Agents &amp; MCP Beginner Manual</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>How MCP Servers Connect Local Files and Tools</h1>
+  <p>AI Agents &amp; MCP Beginner Manual &nbsp;|&nbsp; Published by <strong>Asdale Dynamics, LLC</strong></p>
+</header>
+
+<nav aria-label="Main navigation">
+  <ul>
+    <li><a href="index.html">Welcome</a></li>
+    <li><a href="01-what-are-ai-agents.html">What AI Agents Do</a></li>
+    <li><a href="02-how-mcp-works.html" class="active">How MCP Servers Work</a></li>
+    <li><a href="03-running-your-first-stdio-server.html">Run Your First stdio Server</a></li>
+    <li><a href="04-safety-rules-for-file-access.html">Safety Rules for File Access</a></li>
+    <li><a href="05-master-checklist.html">Master Checklist</a></li>
+  </ul>
+</nav>
+
+<main>
+<section>
+<p>MCP stands for the <strong>Model Context Protocol</strong>. That is a formal name for a simple idea: a standard way for AI tools to connect to the files and programs already on your computer.</p>
+
+<h2>The problem MCP solves</h2>
+<p>Before MCP, every AI tool that wanted to read your files needed its own custom connection. One tool for your notes, another for your calendar, another for your code. Each connection was built differently, so they did not work together, and each one had to be built from scratch.</p>
+
+<p>MCP is like a universal plug. Instead of every AI tool inventing its own way to reach your files, every tool speaks the same language: MCP.</p>
+
+<h2>The three parts of an MCP setup</h2>
+<p>An MCP connection has three pieces:</p>
+<table>
+<thead>
+<tr><th>Part</th><th>What it is</th><th>Analogy</th></tr>
+</thead>
+<tbody>
+<tr><td>AI client</td><td>The AI tool you use (a chat app, a coding assistant, an agent)</td><td>You</td></tr>
+<tr><td>MCP server</td><td>A small program that connects the AI to a specific set of files or tools</td><td>A helper with keys to one room</td></tr>
+<tr><td>Local resource</td><td>The files or tools on your computer (your documents folder, a calendar app, a local database)</td><td>The room</td></tr>
+</tbody>
+</table>
+
+<p>The AI client asks the MCP server for something ("read this file," "list my documents"), and the MCP server does it on the AI's behalf. The AI never touches your files directly — the server is in between.</p>
+
+<h2>stdio: the simplest connection</h2>
+<p>MCP servers can connect in different ways. The simplest one is called <strong>stdio</strong> (standard input/output). The MCP server runs right on your computer, and the AI client talks to it through the same channel programs use to print text and read input.</p>
+
+<p>Why stdio first?</p>
+<ul class="checklist">
+<li>It runs entirely on your computer. Nothing leaves your machine unless you want it to.</li>
+<li>It is easy to set up. No websites, no accounts, no API keys.</li>
+<li>It is a great way to learn how MCP works before trying anything more advanced.</li>
+</ul>
+
+<h2>What an MCP server can connect to</h2>
+<p>An MCP server is just a small program, so it can connect to almost anything. Common examples for beginners:</p>
+<ul class="checklist">
+<li><strong>Local files</strong> — read files in a folder you choose</li>
+<li><strong>Local notes</strong> — read your markdown or text files</li>
+<li><strong>A calendar</strong> — list upcoming appointments</li>
+<li><strong>A task list</strong> — read and check off to-dos</li>
+</ul>
+
+<p>Each MCP server usually does one thing well. You pick the servers you need.</p>
+
+<h2>Quick checklist: understanding an MCP server before you run it</h2>
+<ul class="checklist">
+<li>What files or tools will this server reach?</li>
+<li>Does it run on my computer, or does it send data somewhere else?</li>
+<li>Who made the server, and do I trust them?</li>
+<li>Can I limit it to one folder instead of my whole computer?</li>
+</ul>
+
+<h2>Glossary</h2>
+<dl class="glossary">
+<dt>MCP (Model Context Protocol)</dt>
+<dd>A standard way for AI to connect to files and tools.</dd>
+<dt>MCP server</dt>
+<dd>A small program that connects an AI client to a local resource.</dd>
+<dt>AI client</dt>
+<dd>The AI tool you use that speaks MCP.</dd>
+<dt>stdio</dt>
+<dd>A simple way for programs to exchange text, running on your own computer.</dd>
+</dl>
+
+<div class="next-step">
+<p><strong>Next:</strong> <a href="03-running-your-first-stdio-server.html">Running Your First stdio Server →</a></p>
+</div>
+</section>
+</main>
+
+<footer>
+<p>Published by <strong>Asdale Dynamics, LLC</strong> — beginner-friendly AI education, books, and tools.</p>
+<p>© 2026 Asdale Dynamics, LLC. This manual is open source under the MIT License.</p>
+</footer>
+
+</body>
+</html>

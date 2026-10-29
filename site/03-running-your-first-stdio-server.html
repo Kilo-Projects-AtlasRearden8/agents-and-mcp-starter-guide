@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Running Your First stdio Server — AI Agents &amp; MCP Beginner Manual</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Running Your First stdio Server</h1>
+  <p>AI Agents &amp; MCP Beginner Manual &nbsp;|&nbsp; Published by <strong>Asdale Dynamics, LLC</strong></p>
+</header>
+
+<nav aria-label="Main navigation">
+  <ul>
+    <li><a href="index.html">Welcome</a></li>
+    <li><a href="01-what-are-ai-agents.html">What AI Agents Do</a></li>
+    <li><a href="02-how-mcp-works.html">How MCP Servers Work</a></li>
+    <li><a href="03-running-your-first-stdio-server.html" class="active">Run Your First stdio Server</a></li>
+    <li><a href="04-safety-rules-for-file-access.html">Safety Rules for File Access</a></li>
+    <li><a href="05-master-checklist.html">Master Checklist</a></li>
+  </ul>
+</nav>
+
+<main>
+<section>
+<p>This chapter walks you through running your first MCP server over stdio. No programming is required. Every command below is something you copy and paste into your terminal.</p>
+
+<p>A <strong>stdio server</strong> runs entirely on your own computer. The AI client talks to it through text, and your files never have to leave your machine.</p>
+
+<div class="callout warn">
+<p><strong>Start with a practice folder.</strong> Because this is your first time, we will give the server access to exactly one folder — nothing else. Create a practice folder somewhere easy to find, like your Documents folder, and put a few harmless files in it (notes you do not mind sharing, a grocery list, a practice document).</p>
+<p><strong>Do not</strong> point your first server at your whole computer, your tax folder, or anything with passwords in it.</p>
+</div>
+
+<h2>What you need</h2>
+<ul class="checklist">
+<li>A computer with a terminal (Command Prompt or PowerShell on Windows, Terminal on Mac, Terminal on Linux)</li>
+<li>An AI client that supports MCP stdio servers (for example, Claude Desktop, Cursor, or any MCP-compatible chat app)</li>
+<li>About 15 minutes</li>
+</ul>
+
+<h2>Step-by-step checklist</h2>
+
+<h3>Step 1: Create your practice folder</h3>
+<ul class="checklist">
+<li>Open your file explorer</li>
+<li>Create a new folder named <code>mcp-practice</code> inside your Documents folder</li>
+<li>Inside it, create two text files: <code>grocery-list.txt</code> and <code>notes.txt</code></li>
+<li>Type something simple in each file so you will recognize it later</li>
+</ul>
+
+<h3>Step 2: Install an MCP stdio server</h3>
+<p>There are many MCP servers available. For your first one, pick a simple "local files" server. A common choice is the official filesystem server (it reads files in folders you allow). You install it with one command, depending on what your computer uses:</p>
+
+<p><strong>If your computer uses Node.js</strong> (most common): copy and paste this into your terminal:</p>
+<pre><code>npx -y @modelcontextprotocol/server-filesystem /Users/you/Documents/mcp-practice</code></pre>
+
+<p>On Windows, replace the path with something like:</p>
+<pre><code>npx -y @modelcontextprotocol/server-filesystem C:\Users\you\Documents\mcp-practice</code></pre>
+
+<p><strong>If you do not have Node.js:</strong> install it first from nodejs.org, then run the command above.</p>
+
+<blockquote>
+<p>The <code>npx</code> command downloads the server and runs it. It does not change your system permanently.</p>
+</blockquote>
+
+<h3>Step 3: Connect your AI client to the server</h3>
+<p>Open your AI client's settings and look for "MCP," "Model Context Protocol," or "Servers." Add a new stdio server with these details:</p>
+<ul class="checklist">
+<li><strong>Name:</strong> My First MCP Server</li>
+<li><strong>Command:</strong> <code>npx</code></li>
+<li><strong>Arguments:</strong> <code>-y</code>, <code>@modelcontextprotocol/server-filesystem</code>, and the full path to your <code>mcp-practice</code> folder</li>
+</ul>
+<p>Save the setting. Your AI client will start the server and talk to it through stdio.</p>
+
+<h3>Step 4: Test it</h3>
+<p>Ask your AI client something like:</p>
+<blockquote>
+<p>"List the files in my mcp-practice folder."</p>
+</blockquote>
+<p>You should see <code>grocery-list.txt</code> and <code>notes.txt</code>. Then ask:</p>
+<blockquote>
+<p>"Read my grocery list."</p>
+</blockquote>
+<p>The server reads the file on your computer and hands the text to the AI. Your file never left your machine.</p>
+
+<h2>If something does not work</h2>
+<table>
+<thead>
+<tr><th>Problem</th><th>What to try</th></tr>
+</thead>
+<tbody>
+<tr><td><code>npx: command not found</code></td><td>Install Node.js from nodejs.org, then open a new terminal window</td></tr>
+<tr><td>Server says "folder not found"</td><td>Double-check the path to your <code>mcp-practice</code> folder</td></tr>
+<tr><td>AI client cannot find the server</td><td>Restart the AI client and re-check the server settings</td></tr>
+</tbody>
+</table>
+
+<h2>Glossary</h2>
+<dl class="glossary">
+<dt>Terminal</dt>
+<dd>The app where you type commands to your computer.</dd>
+<dt>npx</dt>
+<dd>A tool that downloads and runs a program without installing it permanently.</dd>
+<dt>stdio server</dt>
+<dd>An MCP server that runs on your computer and exchanges text with your AI client.</dd>
+<dt>Arguments</dt>
+<dd>The extra pieces of text you pass to a command (like the folder path).</dd>
+</dl>
+
+<div class="next-step">
+<p><strong>Next:</strong> <a href="04-safety-rules-for-file-access.html">Safety Rules for File Access →</a></p>
+</div>
+</section>
+</main>
+
+<footer>
+<p>Published by <strong>Asdale Dynamics, LLC</strong> — beginner-friendly AI education, books, and tools.</p>
+<p>© 2026 Asdale Dynamics, LLC. This manual is open source under the MIT License.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safety Rules for File Access — AI Agents &amp; MCP Beginner Manual</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Safety Rules for File Access</h1>
+  <p>AI Agents &amp; MCP Beginner Manual &nbsp;|&nbsp; Published by <strong>Asdale Dynamics, LLC</strong></p>
+</header>
+
+<nav aria-label="Main navigation">
+  <ul>
+    <li><a href="index.html">Welcome</a></li>
+    <li><a href="01-what-are-ai-agents.html">What AI Agents Do</a></li>
+    <li><a href="02-how-mcp-works.html">How MCP Servers Work</a></li>
+    <li><a href="03-running-your-first-stdio-server.html">Run Your First stdio Server</a></li>
+    <li><a href="04-safety-rules-for-file-access.html" class="active">Safety Rules for File Access</a></li>
+    <li><a href="05-master-checklist.html">Master Checklist</a></li>
+  </ul>
+</nav>
+
+<main>
+<section>
+<p>Giving an AI access to your files is convenient, but it is also a power you should hand out carefully. These rules are written for beginners. Follow them every time you connect an MCP server to your computer.</p>
+
+<h2>Rule 1: Start with one small folder</h2>
+<p>Never point a new MCP server at your whole computer, your Documents folder, or your desktop on the first try. Create one practice folder, put harmless files in it, and let the server see only that folder. Once you trust the server, you can decide whether to give it more.</p>
+
+<h2>Rule 2: Know what the server can reach</h2>
+<p>Before you run any MCP server, ask:</p>
+<ul class="checklist">
+<li>Which folders can it read?</li>
+<li>Can it write, edit, or delete files, or only read them?</li>
+<li>Can it reach files outside the folder I chose?</li>
+</ul>
+<p>If you cannot answer these questions, do not run the server yet.</p>
+
+<h2>Rule 3: Run servers on your own computer</h2>
+<p>Prefer stdio servers that run locally. Your files stay on your machine, and nothing is uploaded unless you choose to share it. Be cautious with servers that require you to create an account, enter an API key, or send your files to a website you do not recognize.</p>
+
+<h2>Rule 4: Never put secrets in files the server can see</h2>
+<p>Passwords, API keys, credit card numbers, Social Security numbers, and medical records do not belong in a folder an AI can read. If a file contains secrets, keep it outside any MCP-connected folder.</p>
+
+<h2>Rule 5: Approve important actions</h2>
+<p>A good setup asks you before sending email, deleting files, or spending money. If an agent offers to do something important without asking you first, say no and check its settings.</p>
+
+<h2>Rule 6: Know who made the server</h2>
+<p>Only run MCP servers from people or companies you trust. An MCP server is a program that runs on your computer, so it deserves the same caution as any other program you download.</p>
+
+<h2>Rule 7: You are always in charge</h2>
+<p>You can stop an MCP server at any time. You can remove its access to a folder. You can delete the practice folder and start over. If something feels wrong, turn it off.</p>
+
+<h2>Quick safety checklist</h2>
+<p>Run through this before connecting any new server:</p>
+<ul class="checklist">
+<li>I know which folder this server can reach, and it is not my whole computer</li>
+<li>The folder contains no passwords, API keys, or personal documents I want to keep private</li>
+<li>The server runs on my computer (stdio), not on a website I do not recognize</li>
+<li>I know who made the server and I trust them</li>
+<li>The AI client will ask me before sending email or deleting files</li>
+<li>I know how to stop the server and remove its access</li>
+</ul>
+
+<h2>If something goes wrong</h2>
+<ul class="checklist">
+<li>Stop the server in your AI client's settings</li>
+<li>Delete or move the practice folder</li>
+<li>Change any password or API key that might have been exposed</li>
+<li>Ask a more experienced friend for help, or contact Asdale Dynamics, LLC through dylanasdale.github.io</li>
+</ul>
+
+<div class="next-step">
+<p><strong>Next:</strong> <a href="05-master-checklist.html">Master Checklist →</a></p>
+</div>
+</section>
+</main>
+
+<footer>
+<p>Published by <strong>Asdale Dynamics, LLC</strong> — beginner-friendly AI education, books, and tools.</p>
+<p>© 2026 Asdale Dynamics, LLC. This manual is open source under the MIT License.</p>
+</footer>
+
+</body>
+</html>
